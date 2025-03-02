@@ -8,7 +8,44 @@ import CaseStudiesSection from "../components/CaseStudiesSection";
 import CallToAction from "../components/CallToAction";
 import Footer from "../components/Footer";
 
+// Analytics tracking helper
+const trackPageView = () => {
+  // This would connect to your analytics platform (Google Analytics, Meta Pixel, etc.)
+  console.log("Page view tracked:", {
+    page: window.location.pathname,
+    referrer: document.referrer,
+    timestamp: new Date().toISOString(),
+    utmParams: {
+      source: new URLSearchParams(window.location.search).get('utm_source'),
+      medium: new URLSearchParams(window.location.search).get('utm_medium'),
+      campaign: new URLSearchParams(window.location.search).get('utm_campaign'),
+      content: new URLSearchParams(window.location.search).get('utm_content'),
+      term: new URLSearchParams(window.location.search).get('utm_term')
+    }
+  });
+};
+
+// Track user engagement
+const trackEngagement = (action: string, label: string, value?: number) => {
+  console.log("User engagement tracked:", {
+    action,
+    label,
+    value,
+    timestamp: new Date().toISOString()
+  });
+};
+
 const Index = () => {
+  // Track page view when component mounts
+  useEffect(() => {
+    trackPageView();
+    
+    // Initialize lead tracking from localStorage
+    if (!localStorage.getItem('leads')) {
+      localStorage.setItem('leads', JSON.stringify([]));
+    }
+  }, []);
+
   // Add a scroll-to-top button functionality
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +59,12 @@ const Index = () => {
           scrollToTopBtn.classList.add("opacity-0", "invisible");
         }
       }
+      
+      // Track scroll depth for engagement
+      const scrollPercentage = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      if (scrollPercentage === 25 || scrollPercentage === 50 || scrollPercentage === 75 || scrollPercentage === 100) {
+        trackEngagement('scroll_depth', `${scrollPercentage}%`);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,6 +76,7 @@ const Index = () => {
       top: 0,
       behavior: "smooth"
     });
+    trackEngagement('button_click', 'scroll_to_top');
   };
 
   return (

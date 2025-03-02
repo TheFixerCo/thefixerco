@@ -1,8 +1,17 @@
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
 
 const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    source: "website" // Track lead source
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,11 +34,60 @@ const CallToAction = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, this would connect to a form submission API
-    console.log("Form submitted");
-    alert("Thank you for your message! We'll get back to you soon.");
+    setIsSubmitting(true);
+    
+    // Add UTM parameters if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source');
+    const utmMedium = urlParams.get('utm_medium');
+    const utmCampaign = urlParams.get('utm_campaign');
+    
+    const leadData = {
+      ...formData,
+      timestamp: new Date().toISOString(),
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      page: window.location.pathname
+    };
+    
+    // Log lead data to console (in a real app, you would send this to your backend)
+    console.log("Lead captured:", leadData);
+    
+    // Simulate API call with timeout
+    setTimeout(() => {
+      // Store lead in localStorage as a simple database
+      const leads = JSON.parse(localStorage.getItem('leads') || '[]');
+      leads.push(leadData);
+      localStorage.setItem('leads', JSON.stringify(leads));
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        source: "website"
+      });
+      
+      setIsSubmitting(false);
+      
+      // Show success message
+      toast.success("Thank you for your message!", {
+        description: "We'll get back to you soon.",
+        duration: 5000
+      });
+    }, 1000);
   };
 
   return (
@@ -62,6 +120,8 @@ const CallToAction = () => {
                   placeholder="Your name"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
                   required
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               
@@ -75,6 +135,8 @@ const CallToAction = () => {
                   placeholder="your@email.com"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -88,6 +150,8 @@ const CallToAction = () => {
                 id="subject"
                 placeholder="How can we help?"
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
+                value={formData.subject}
+                onChange={handleChange}
               />
             </div>
             
@@ -101,12 +165,30 @@ const CallToAction = () => {
                 placeholder="Tell us about your project..."
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40 resize-none"
                 required
+                value={formData.message}
+                onChange={handleChange}
               ></textarea>
             </div>
             
             <div className="text-center">
-              <button type="submit" className="button-primary px-8 py-4 text-lg">
-                Contact Us
+              <button 
+                type="submit" 
+                className="button-primary px-8 py-4 text-lg relative"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="opacity-0">Contact Us</span>
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    </span>
+                  </>
+                ) : (
+                  'Contact Us'
+                )}
               </button>
             </div>
           </form>

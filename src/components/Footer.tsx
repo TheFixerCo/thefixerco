@@ -1,4 +1,3 @@
-
 import { Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -9,9 +8,16 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <img src="/logo.svg" alt="The Fixer" className="h-10 mb-6" />
+            <div className="flex items-center mb-6">
+              <img 
+                src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
+                alt="The Fixer Co" 
+                className="h-8 w-8 mr-3" 
+              />
+              <span className="text-white font-medium text-xl">The Fixer Co.</span>
+            </div>
             <p className="text-fixer-light/70 max-w-md mb-8">
-              The Fixer provides strategic consulting services that help businesses navigate challenges and 
+              The Fixer Co provides strategic consulting services that help businesses navigate challenges and 
               capitalize on opportunities for sustainable growth and success.
             </p>
             <div className="flex space-x-4">
@@ -97,7 +103,7 @@ const Footer = () => {
         
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-fixer-light/50 mb-4 md:mb-0">
-            &copy; {currentYear} The Fixer Consulting, Inc. All rights reserved.
+            &copy; {currentYear} The Fixer Co. All rights reserved.
           </p>
           
           <div className="flex space-x-8">

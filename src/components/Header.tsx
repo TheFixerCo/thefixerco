@@ -64,8 +64,13 @@ const Header = () => {
       }`}
     >
       <div className="container-custom flex justify-between items-center">
-        <a href="#home" className="z-10">
-          <img src="/logo.svg" alt="The Fixer" className="h-10" />
+        <a href="#home" className="z-10 flex items-center">
+          <img 
+            src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
+            alt="The Fixer Co" 
+            className="h-8 w-8 mr-3" 
+          />
+          <span className="text-white font-medium text-xl">The Fixer Co.</span>
         </a>
         
         {/* Desktop Navigation */}

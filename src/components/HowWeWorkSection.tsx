@@ -34,7 +34,7 @@ const HowWeWorkSection = () => {
           {/* Social-first opportunity section */}
           <div className="animate-on-scroll opacity-0 transition-all duration-700 mb-24 text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">
-              In today's social-first landscape, there is a tremendous opportunity for brands to be:
+              In today's social-first landscape, there is a tremendous opportunity for South African businesses to improve social media ROI through:
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -64,20 +64,20 @@ const HowWeWorkSection = () => {
             </div>
             
             <p className="text-3xl md:text-4xl font-bold mt-16 text-purple-500 text-center">
-              with accountability to actual business results.
+              with content strategy that drives sales and actual business results.
             </p>
           </div>
           
           {/* How we can help brands succeed section */}
           <div className="animate-on-scroll opacity-0 transition-all duration-700 text-center max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              How we can help <span className="text-purple-500">brands succeed.</span>
+              How we help <span className="text-purple-500">local businesses succeed with organic social media strategy without ads.</span>
             </h2>
             
             <p className="text-lg mb-10 text-fixer-light/80 max-w-4xl mx-auto">
-              Our goal with every engagement is to provide more value than you paid for, leaving you with a volume of 
-              strategic insights & knowledge, actionable solutions & market-ready ideas as well as a practical plan to make 
-              it real & sustainable.
+              As an African social selling expert, our goal with every engagement is to provide more value than you paid for, 
+              leaving you with a volume of creator-driven marketing tactics & knowledge, actionable solutions & market-ready ideas 
+              as well as a practical plan to turn social media followers into customers.
             </p>
             
             <p className="text-xl font-semibold mb-12">
@@ -92,7 +92,7 @@ const HowWeWorkSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">PAC (Platforms & Culture)</h3>
                 <p className="text-gray-700">
-                  Educate/upskill your team on what has your consumers' attention and how you capture it.
+                  Educate and upskill your team on TikTok marketing in South Africa and how to capture consumer attention.
                 </p>
               </div>
               
@@ -103,7 +103,7 @@ const HowWeWorkSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Social at the Center</h3>
                 <p className="text-gray-700">
-                  Brand is built on social, we can help make that less scary & more practical while making your brand more relevant to more people.
+                  Brand is built on social, we help with content strategy for service businesses that makes your brand more relevant to more people.
                 </p>
               </div>
               
@@ -114,7 +114,7 @@ const HowWeWorkSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Underpriced Attention</h3>
                 <p className="text-gray-700">
-                  The media landscape is changing constantly. We help your team become "day traders" of attention.
+                  The media landscape is changing constantly. We help your team become "day traders" of attention through effective cultural marketing strategies.
                 </p>
               </div>
               
@@ -125,7 +125,7 @@ const HowWeWorkSection = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Holistic Commerce</h3>
                 <p className="text-gray-700">
-                  We guide your team on modern commerce best practices while enhancing capabilities to optimize sales and brand performance.
+                  We guide your team on social selling for e-commerce and enhance capabilities to optimize sales and brand performance.
                 </p>
               </div>
             </div>

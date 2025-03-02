@@ -79,11 +79,11 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 ref={titleRef} className="font-bold text-balance mb-6">
-            Consulting Services That Drive <span className="text-fixer-gold">Business Growth</span>
+            Social Selling Strategy That Drives <span className="text-fixer-gold">Business Growth</span>
           </h1>
           
           <p ref={subtitleRef} className="text-xl md:text-2xl mb-10 text-fixer-light/80 text-balance">
-            We transform challenges into opportunities, delivering strategic consulting that builds lasting success for our clients.
+            We transform social media followers into customers, delivering organic growth strategies for South African businesses.
           </p>
           
           <button 

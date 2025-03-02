@@ -5,33 +5,33 @@ import { Lightbulb, BarChart3, LineChart, Layers, Globe, TrendingUp } from "luci
 const services = [
   {
     icon: <Lightbulb size={48} className="text-fixer-gold mb-4" />,
-    title: "Brand Strategy",
-    description: "Develop a compelling brand identity and positioning that resonates with your target audience and differentiates you from competitors."
+    title: "Social Selling Strategy",
+    description: "Develop compelling approaches to turn social media followers into customers through content that resonates with your target audience and differentiates you from competitors."
   },
   {
     icon: <BarChart3 size={48} className="text-fixer-gold mb-4" />,
-    title: "Business Analysis",
-    description: "Gain deep insights into your business operations and market position through comprehensive analysis and data-driven recommendations."
+    title: "Content Marketing South Africa",
+    description: "Gain deep insights into local market content preferences and position through comprehensive analysis and data-driven content strategy that drives sales."
   },
   {
     icon: <LineChart size={48} className="text-fixer-gold mb-4" />,
-    title: "Growth Planning",
-    description: "Create and execute strategic growth plans that scale your business and achieve sustainable, long-term success."
+    title: "Organic Social Media Growth",
+    description: "Create and execute strategic growth plans that scale your business with organic social media strategy without ads for sustainable, long-term success."
   },
   {
     icon: <Layers size={48} className="text-fixer-gold mb-4" />,
-    title: "Media Consulting",
-    description: "Optimize your media strategy and presence across traditional and digital channels to maximize reach and engagement."
+    title: "TikTok Marketing Expert",
+    description: "Optimize your TikTok marketing in South Africa with creator partnerships that maximize reach and engagement for all business types."
   },
   {
     icon: <Globe size={48} className="text-fixer-gold mb-4" />,
-    title: "Digital Transformation",
-    description: "Navigate digital disruption with innovative strategies that modernize your business and create competitive advantages."
+    title: "Cultural Marketing Strategy",
+    description: "Navigate African markets with innovative cultural marketing strategies that modernize your business and create competitive advantages."
   },
   {
     icon: <TrendingUp size={48} className="text-fixer-gold mb-4" />,
-    title: "Market Expansion",
-    description: "Enter new markets and territories with customized expansion strategies that mitigate risks and accelerate growth."
+    title: "B2B Social Selling",
+    description: "Enter new B2B markets with customized social selling for service businesses that mitigate risks and accelerate social media ROI improvement."
   }
 ];
 
@@ -69,10 +69,10 @@ const ServicesSection = () => {
       <div className="container-custom">
         <div className="section-heading">
           <h2 className="section-title">
-            Our <span className="text-fixer-blue">Services</span>
+            Our <span className="text-fixer-blue">Services</span> for South African Businesses
           </h2>
           <p className="section-subtitle">
-            Comprehensive consulting solutions designed to address your most critical business challenges and opportunities.
+            Comprehensive social media consulting solutions designed to address your most critical digital challenges and opportunities for growth.
           </p>
         </div>
         

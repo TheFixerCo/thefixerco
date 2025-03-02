@@ -33,15 +33,15 @@ const AboutSection = () => {
         <div ref={sectionRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              We <span className="text-fixer-blue">Transform</span> Businesses Through Strategic Consulting
+              We <span className="text-fixer-blue">Transform</span> Businesses Through Content Marketing in South Africa
             </h2>
             
             <p className="text-lg mb-6 text-fixer-light/80">
-              At The Fixer, we believe in a collaborative approach to consulting. We work closely with our clients to understand their unique challenges and objectives, then develop custom strategies that drive meaningful results.
+              As the leading TikTok marketing expert in South Africa, we believe in a collaborative approach to creator partnerships. We work closely with our clients to develop cultural marketing strategies that understand their unique challenges and objectives, then develop custom social selling strategies that drive meaningful results.
             </p>
             
             <p className="text-lg mb-8 text-fixer-light/80">
-              Our team combines deep industry expertise with innovative thinking to help our clients navigate complex business landscapes and achieve sustainable growth.
+              Our team combines deep expertise in social media conversion with innovative thinking to help both B2B social selling and e-commerce clients navigate complex digital landscapes and achieve sustainable organic social media growth.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -67,7 +67,7 @@ const AboutSection = () => {
               <div className="aspect-[4/3] rounded-lg overflow-hidden neo-blur">
                 <img 
                   src="/lovable-uploads/5387a9b5-616f-4de1-ae11-ed1db9a864da.png" 
-                  alt="Strategic consulting session" 
+                  alt="Strategic social media consultant South Africa" 
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>

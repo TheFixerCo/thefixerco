@@ -37,9 +37,44 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-hero-pattern bg-cover bg-center bg-no-repeat pt-24"
+      className="relative min-h-screen flex items-center pt-24"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-fixer-dark/90 to-fixer-dark/80"></div>
+      {/* Background lifestyle images with overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-fixer-dark/90 to-fixer-dark/80 z-10"></div>
+        
+        <div className="absolute inset-0 grid grid-cols-3 gap-4 opacity-30 z-0">
+          {/* First image */}
+          <div className="relative h-full w-full overflow-hidden">
+            <img 
+              src="/lovable-uploads/e8a07933-d5f1-4934-a390-156601eb7558.png" 
+              alt="South African youth" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-fixer-gold/30 mix-blend-overlay"></div>
+          </div>
+          
+          {/* Second image */}
+          <div className="relative h-full w-full overflow-hidden">
+            <img 
+              src="/lovable-uploads/7faa89c9-2d00-4c46-a499-7ecee6245222.png" 
+              alt="South African youth" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-fixer-gold/20 mix-blend-overlay"></div>
+          </div>
+          
+          {/* Third image (repeating first image) */}
+          <div className="relative h-full w-full overflow-hidden">
+            <img 
+              src="/lovable-uploads/e8a07933-d5f1-4934-a390-156601eb7558.png" 
+              alt="South African youth" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-fixer-gold/25 mix-blend-overlay"></div>
+          </div>
+        </div>
+      </div>
       
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
@@ -54,7 +89,7 @@ const Hero = () => {
           <button 
             ref={buttonRef}
             onClick={handleScrollToContact}
-            className="button-primary text-lg"
+            className="button-primary text-lg bg-fixer-gold hover:bg-fixer-gold/90"
           >
             Get in Touch
           </button>

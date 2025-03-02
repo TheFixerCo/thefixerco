@@ -77,6 +77,9 @@ export default {
 					dark: '#121212',
 					blue: '#3B82F6',
 					'blue-light': '#93C5FD'
+				},
+				purple: {
+					500: '#A855F7'
 				}
 			},
 			borderRadius: {

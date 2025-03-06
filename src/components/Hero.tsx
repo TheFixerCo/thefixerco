@@ -1,104 +1,41 @@
 
-import { useEffect, useRef } from "react";
+import React from 'react';
+import { Button } from "./ui/button";
+import { Mail } from "lucide-react";
+import StrategyElements from './StrategyElements';
 
 const Hero = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    // Simple animation on page load
-    const elements = [titleRef.current, subtitleRef.current, buttonRef.current];
-    
-    elements.forEach((el, index) => {
-      if (el) {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        
-        setTimeout(() => {
-          el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-          el.style.opacity = "1";
-          el.style.transform = "translateY(0)";
-        }, 100 + index * 200);
-      }
-    });
-  }, []);
-
-  const handleScrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      window.scrollTo({
-        top: contactSection.offsetTop - 100,
-        behavior: "smooth"
-      });
-    }
-  };
-
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center pt-24"
-    >
-      {/* Background lifestyle images with overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-fixer-dark/90 to-fixer-dark/80 z-10"></div>
-        
-        <div className="absolute inset-0 grid grid-cols-3 gap-4 opacity-30 z-0">
-          {/* First image */}
-          <div className="relative h-full w-full overflow-hidden">
-            <img 
-              src="/lovable-uploads/e8a07933-d5f1-4934-a390-156601eb7558.png" 
-              alt="South African youth" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-fixer-gold/30 mix-blend-overlay"></div>
-          </div>
-          
-          {/* Second image */}
-          <div className="relative h-full w-full overflow-hidden">
-            <img 
-              src="/lovable-uploads/7faa89c9-2d00-4c46-a499-7ecee6245222.png" 
-              alt="South African youth" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-fixer-gold/20 mix-blend-overlay"></div>
-          </div>
-          
-          {/* Third image (repeating first image) */}
-          <div className="relative h-full w-full overflow-hidden">
-            <img 
-              src="/lovable-uploads/e8a07933-d5f1-4934-a390-156601eb7558.png" 
-              alt="South African youth" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-fixer-gold/25 mix-blend-overlay"></div>
-          </div>
-        </div>
-      </div>
-      
+    <section className="relative min-h-screen flex flex-col justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat">
       <div className="container-custom relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 ref={titleRef} className="font-bold text-balance mb-6">
-            Social Selling Strategy That Drives <span className="text-fixer-gold">Business Growth</span>
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <h1 className="font-mokoto text-4xl md:text-6xl lg:text-7xl mb-6 text-balance">
+            Unlock Real Online Growth
           </h1>
-          
-          <p ref={subtitleRef} className="text-xl md:text-2xl mb-10 text-fixer-light/80 text-balance">
-            We transform social media followers into customers, delivering organic growth strategies for South African businesses.
+          <p className="font-poppins text-lg md:text-xl text-fixer-light/80 mb-8 max-w-3xl mx-auto">
+            Our data-driven approach to social selling and content strategy helps startups and founders like you achieve significant online growth, drive more sales, and increase revenue. In just 90 days, you could transform your online presence and start seeing real results.
           </p>
-          
-          <button 
-            ref={buttonRef}
-            onClick={handleScrollToContact}
-            className="button-primary text-lg bg-fixer-gold hover:bg-fixer-gold/90"
-          >
-            Get in Touch
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="bg-fixer-gold hover:bg-fixer-gold/90">
+              <a href="mailto:bianca@thefixerco.com">
+                <Mail className="mr-2 h-4 w-4" />
+                Start Your Growth Journey
+              </a>
+            </Button>
+          </div>
         </div>
-      </div>
-      
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-white/30 flex justify-center">
-          <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-[slide-down_1.5s_ease-in-out_infinite]"></div>
+        
+        <StrategyElements />
+        
+        <div className="text-center mt-16">
+          <p className="font-poppins text-xl text-fixer-light/90 mb-4">
+            Ready to take your online presence to the next level?
+          </p>
+          <Button asChild variant="outline" className="border-fixer-gold text-fixer-gold hover:bg-fixer-gold hover:text-white">
+            <a href="mailto:bianca@thefixerco.com">
+              Get in Touch
+            </a>
+          </Button>
         </div>
       </div>
     </section>

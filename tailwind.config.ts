@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,8 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
-				heading: ['Montserrat', 'Helvetica', 'Arial', 'sans-serif'],
+				sans: ['Poppins', 'Helvetica', 'Arial', 'sans-serif'],
+				heading: ['Mokoto', 'Helvetica', 'Arial', 'sans-serif'],
+				mokoto: ['Mokoto', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -67,7 +68,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors from the provided design
 				fixer: {
 					gold: '#B08401',
 					rose: '#D49E8D',

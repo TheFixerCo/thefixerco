@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from "react";
-import { Lightbulb, BarChart3, LineChart, Layers, Globe, TrendingUp } from "lucide-react";
+import { Lightbulb, BarChart3, TrendingUp, Phone, Music } from "lucide-react";
 
 const services = [
   {
@@ -10,28 +10,28 @@ const services = [
   },
   {
     icon: <BarChart3 size={48} className="text-fixer-gold mb-4" />,
-    title: "Content Marketing South Africa",
+    title: "Content Marketing",
     description: "Gain deep insights into local market content preferences and position through comprehensive analysis and data-driven content strategy that drives sales."
   },
   {
-    icon: <LineChart size={48} className="text-fixer-gold mb-4" />,
-    title: "Organic Social Media Growth",
+    icon: <TrendingUp size={48} className="text-fixer-gold mb-4" />,
+    title: "Organic Growth",
     description: "Create and execute strategic growth plans that scale your business with organic social media strategy without ads for sustainable, long-term success."
   },
   {
-    icon: <Layers size={48} className="text-fixer-gold mb-4" />,
+    icon: <Music size={48} className="text-fixer-gold mb-4" />,
     title: "TikTok Marketing Expert",
-    description: "Optimize your TikTok marketing in South Africa with creator partnerships that maximize reach and engagement for all business types."
+    description: "Optimize your TikTok marketing with creator partnerships that maximize reach and engagement for all business types."
   },
   {
-    icon: <Globe size={48} className="text-fixer-gold mb-4" />,
-    title: "Cultural Marketing Strategy",
-    description: "Navigate African markets with innovative cultural marketing strategies that modernize your business and create competitive advantages."
+    icon: <Phone size={48} className="text-fixer-gold mb-4" />,
+    title: "Culture Marketing",
+    description: "Navigate markets with innovative cultural marketing strategies that modernize your business and create competitive advantages."
   },
   {
-    icon: <TrendingUp size={48} className="text-fixer-gold mb-4" />,
-    title: "B2B Social Selling",
-    description: "Enter new B2B markets with customized social selling for service businesses that mitigate risks and accelerate social media ROI improvement."
+    icon: <Lightbulb size={48} className="text-fixer-gold mb-4" />,
+    title: "Education/ Workshops",
+    description: "Enter new markets with customized social selling for service businesses that mitigate risks and accelerate social media ROI improvement."
   }
 ];
 
@@ -67,13 +67,11 @@ const ServicesSection = () => {
   return (
     <section id="services" className="bg-gradient-to-b from-fixer-dark to-fixer-dark/95 py-24 relative">
       <div className="container-custom">
-        <div className="section-heading">
-          <h2 className="section-title">
-            Our <span className="text-fixer-blue">Services</span> for South African Businesses
+        <div className="section-heading mt-8">
+          <h2 className="section-title font-tenor font-bold text-center mb-6">
+            <span className="text-purple-custom">Social-First</span> Solutions 🎯<br/>
+            is what we do 💜
           </h2>
-          <p className="section-subtitle">
-            Comprehensive social media consulting solutions designed to address your most critical digital challenges and opportunities for growth.
-          </p>
         </div>
         
         <div 
@@ -83,7 +81,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div key={index} className="service-card opacity-0">
               {service.icon}
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-tenor font-bold mb-3">{service.title}</h3>
               <p className="text-fixer-light/70">{service.description}</p>
             </div>
           ))}

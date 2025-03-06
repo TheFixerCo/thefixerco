@@ -21,8 +21,9 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', 'Helvetica', 'Arial', 'sans-serif'],
-				heading: ['Mokoto', 'Helvetica', 'Arial', 'sans-serif'],
+				heading: ['Tenor Sans', 'Helvetica', 'Arial', 'sans-serif'],
 				mokoto: ['Mokoto', 'sans-serif'],
+				tenor: ['Tenor Sans', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
 			},
 			colors: {

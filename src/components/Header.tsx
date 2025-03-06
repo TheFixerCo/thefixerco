@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Header = () => {
@@ -61,7 +61,7 @@ const Header = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? "py-3 bg-fixer-dark/90 backdrop-blur-md shadow-lg" 
-          : "py-6 bg-transparent"
+          : "py-6 bg-black"
       }`}
     >
       <div className="container-custom flex justify-between items-center">
@@ -75,48 +75,53 @@ const Header = () => {
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 items-center">
+          <Button 
+            asChild
+            className="bg-purple-custom hover:bg-fixer-blue font-tenor text-[20px] font-bold text-white transition-all duration-300"
+          >
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("contact");
+              }}
+              className="flex items-center gap-2"
+            >
+              <Phone size={18} className="text-white" />
+              GET IN TOUCH
+            </a>
+          </Button>
           <a 
             href="#home" 
-            className={`nav-link ${activeLink === "home" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "home" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
             }}
           >
-            Welcome
+            HOME
           </a>
           <a 
             href="#services" 
-            className={`nav-link ${activeLink === "services" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "services" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
             }}
           >
-            Services
+            SERVICES
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link ${activeLink === "case-studies" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
             }}
           >
-            Case Studies
+            CASE STUDIES
           </a>
-          <Button 
-            asChild
-            className="bg-purple-custom hover:bg-fixer-blue font-mokoto font-bold text-white ml-4 transition-all duration-300"
-          >
-            <a href="#contact" onClick={(e) => {
-              e.preventDefault();
-              handleNavLinkClick("contact");
-            }}>
-              Get in Touch
-            </a>
-          </Button>
         </nav>
         
         {/* Mobile menu button */}
@@ -134,47 +139,52 @@ const Header = () => {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
+          <Button 
+            asChild
+            className="bg-purple-custom hover:bg-fixer-blue font-tenor font-bold text-[20px] text-white transition-all duration-300"
+          >
+            <a 
+              href="#contact" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavLinkClick("contact");
+              }}
+              className="flex items-center gap-2"
+            >
+              <Phone size={18} className="text-white" />
+              GET IN TOUCH
+            </a>
+          </Button>
           <a 
             href="#home" 
-            className={`nav-link text-xl ${activeLink === "home" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "home" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
             }}
           >
-            Welcome
+            HOME
           </a>
           <a 
             href="#services" 
-            className={`nav-link text-xl ${activeLink === "services" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "services" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
             }}
           >
-            Services
+            SERVICES
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link text-xl ${activeLink === "case-studies" ? "active" : ""}`}
+            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
             }}
           >
-            Case Studies
+            CASE STUDIES
           </a>
-          <Button 
-            asChild
-            className="bg-purple-custom hover:bg-fixer-blue font-mokoto font-bold text-white ml-4 transition-all duration-300"
-          >
-            <a href="#contact" onClick={(e) => {
-              e.preventDefault();
-              handleNavLinkClick("contact");
-            }}>
-              Get in Touch
-            </a>
-          </Button>
         </div>
       </div>
     </header>

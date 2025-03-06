@@ -6,7 +6,11 @@ const StrategyElement = ({ title, description }: { title: string; description: s
   const boldKeywords = (text: string) => {
     return text.split(' ').map((word, index) => {
       // Bold words like "unified", "data-driven", "personalized", "targeted", etc.
-      const keyWords = ["unified", "data-driven", "personalized", "targeted", "engagement", "conversion", "unique", "engaging", "social proof"];
+      const keyWords = [
+        "unified", "data-driven", "personalized", "targeted", "engagement", 
+        "conversion", "unique", "engaging", "social proof", "social media marketing",
+        "social strategy", "digital marketing", "growth"
+      ];
       
       if (keyWords.some(keyword => word.toLowerCase().includes(keyword.toLowerCase()))) {
         return <strong key={index}>{word} </strong>;
@@ -18,7 +22,7 @@ const StrategyElement = ({ title, description }: { title: string; description: s
   return (
     <div className="flex flex-col gap-4 glass-card p-6 rounded-lg">
       <div className="flex items-center justify-center">
-        <span className="bg-white text-fixer-dark px-6 py-3 rounded-full font-mokoto text-base font-bold">
+        <span className="bg-white text-fixer-dark px-6 py-3 rounded-full font-tenor text-[20px] font-bold">
           {title}
         </span>
       </div>
@@ -30,8 +34,8 @@ const StrategyElement = ({ title, description }: { title: string; description: s
 const StrategyElements = () => {
   return (
     <div className="space-y-8">
-      <h2 className="text-3xl md:text-4xl font-mokoto text-center mb-12 text-purple-custom">
-        Our strategy is rooted in 3 essential elements
+      <h2 className="text-3xl md:text-4xl font-tenor font-bold text-center mb-12">
+        Our <span className="text-purple-custom">strategy</span> is rooted in <span className="text-purple-custom">3 pillars</span>
       </h2>
       <div className="grid md:grid-cols-3 gap-6">
         <StrategyElement

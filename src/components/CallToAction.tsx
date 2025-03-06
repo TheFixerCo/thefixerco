@@ -1,5 +1,17 @@
+
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
+import { Phone } from "lucide-react";
+
+// Define country list with South Africa at the top
+const countries = [
+  "South Africa",
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  // Add all other countries alphabetically
+  "Zimbabwe"
+];
 
 const CallToAction = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
@@ -114,7 +126,7 @@ const CallToAction = () => {
           className="max-w-4xl mx-auto rounded-2xl p-8 md:p-12 relative overflow-hidden opacity-0"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mokoto text-purple-custom">
+            <h2 className="text-3xl md:text-4xl font-tenor font-bold mb-4 text-purple-custom">
               CONNECT WITH US
             </h2>
             <p className="text-fixer-light/80 max-w-2xl mx-auto font-poppins">
@@ -187,6 +199,42 @@ const CallToAction = () => {
               </div>
             </div>
             
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="region" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  Region <span className="text-purple-custom">*</span>
+                </label>
+                <select
+                  id="region"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white"
+                  required
+                  value={formData.region}
+                  onChange={handleChange}
+                >
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              
+              <div>
+                <label htmlFor="city" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  City <span className="text-purple-custom">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="city"
+                  placeholder="Your city"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
+                  required
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            
             <div>
               <label htmlFor="subject" className="block text-sm font-medium mb-1 text-fixer-light/90">
                 Subject <span className="text-purple-custom">*</span>
@@ -235,12 +283,12 @@ const CallToAction = () => {
             <div className="text-center">
               <button 
                 type="submit" 
-                className="bg-purple-custom hover:bg-purple-custom/90 text-white font-mokoto font-bold px-8 py-4 rounded-md transition-all duration-300"
+                className="bg-purple-custom hover:bg-purple-custom/90 text-white font-tenor font-bold px-8 py-4 rounded-md transition-all duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   <>
-                    <span className="opacity-0">Submit</span>
+                    <span className="opacity-0">SUBMIT</span>
                     <span className="absolute inset-0 flex items-center justify-center">
                       <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -249,7 +297,7 @@ const CallToAction = () => {
                     </span>
                   </>
                 ) : (
-                  'Submit'
+                  'SUBMIT'
                 )}
               </button>
             </div>

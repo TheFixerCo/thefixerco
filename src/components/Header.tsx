@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
   // Handle section visibility to update active link
   useEffect(() => {
     const handleSectionVisibility = () => {
-      const sections = ["home", "about", "services", "case-studies", "contact"];
+      const sections = ["home", "services", "case-studies", "contact"];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -83,17 +84,7 @@ const Header = () => {
               handleNavLinkClick("home");
             }}
           >
-            Home
-          </a>
-          <a 
-            href="#about" 
-            className={`nav-link ${activeLink === "about" ? "active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavLinkClick("about");
-            }}
-          >
-            About
+            Welcome
           </a>
           <a 
             href="#services" 
@@ -115,16 +106,17 @@ const Header = () => {
           >
             Case Studies
           </a>
-          <a 
-            href="#contact" 
-            className={`nav-link ${activeLink === "contact" ? "active" : ""}`}
-            onClick={(e) => {
+          <Button 
+            asChild
+            className="bg-purple-custom hover:bg-fixer-blue font-mokoto font-bold text-white ml-4 transition-all duration-300"
+          >
+            <a href="#contact" onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("contact");
-            }}
-          >
-            Contact
-          </a>
+            }}>
+              Get in Touch
+            </a>
+          </Button>
         </nav>
         
         {/* Mobile menu button */}
@@ -150,17 +142,7 @@ const Header = () => {
               handleNavLinkClick("home");
             }}
           >
-            Home
-          </a>
-          <a 
-            href="#about" 
-            className={`nav-link text-xl ${activeLink === "about" ? "active" : ""}`}
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavLinkClick("about");
-            }}
-          >
-            About
+            Welcome
           </a>
           <a 
             href="#services" 
@@ -182,16 +164,17 @@ const Header = () => {
           >
             Case Studies
           </a>
-          <a 
-            href="#contact" 
-            className={`nav-link text-xl ${activeLink === "contact" ? "active" : ""}`}
-            onClick={(e) => {
+          <Button 
+            asChild
+            className="bg-purple-custom hover:bg-fixer-blue font-mokoto font-bold text-white ml-4 transition-all duration-300"
+          >
+            <a href="#contact" onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("contact");
-            }}
-          >
-            Contact
-          </a>
+            }}>
+              Get in Touch
+            </a>
+          </Button>
         </div>
       </div>
     </header>

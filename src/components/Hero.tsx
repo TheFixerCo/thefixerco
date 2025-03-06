@@ -6,7 +6,7 @@ import StrategyElements from './StrategyElements';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-hero-pattern bg-cover bg-center bg-no-repeat">
+    <section className="relative min-h-screen flex flex-col justify-center">
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <h1 className="font-mokoto text-4xl md:text-6xl lg:text-7xl mb-6 text-balance text-purple-custom">
@@ -43,7 +43,7 @@ const Hero = () => {
         
         <div className="text-center mt-16">
           <p className="font-poppins text-black text-xl mb-4">
-            Ready to take your online presence to the next level?
+            Ready to level-up your social selling?
           </p>
           <Button asChild variant="outline" className="border-purple-custom text-purple-custom hover:bg-purple-custom hover:text-white font-mokoto font-bold">
             <a href="mailto:bianca@thefixerco.com">

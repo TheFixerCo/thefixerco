@@ -7,11 +7,43 @@ const CallToAction = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    company: "",
+    role: "",
+    region: "South Africa",
+    city: "",
     subject: "",
     message: "",
-    source: "website" // Track lead source
+    source: "website"
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Dropdown options
+  const regions = [
+    "South Africa",
+    "East Africa",
+    "West Africa",
+    "USA",
+    "Asia",
+    "Europe",
+    "Australia",
+    "Middle East",
+    "Canada",
+    "Other"
+  ];
+  
+  const cities = {
+    "South Africa": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "Other"],
+    "East Africa": ["Nairobi", "Dar es Salaam", "Kampala", "Kigali", "Addis Ababa", "Other"],
+    "West Africa": ["Lagos", "Accra", "Abuja", "Dakar", "Other"],
+    "USA": ["New York", "Los Angeles", "Chicago", "San Francisco", "Miami", "Other"],
+    "Asia": ["Tokyo", "Singapore", "Hong Kong", "Mumbai", "Shanghai", "Other"],
+    "Europe": ["London", "Paris", "Berlin", "Madrid", "Rome", "Other"],
+    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Other"],
+    "Middle East": ["Dubai", "Riyadh", "Doha", "Abu Dhabi", "Other"],
+    "Canada": ["Toronto", "Vancouver", "Montreal", "Calgary", "Other"],
+    "Other": ["Other"]
+  };
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,12 +66,20 @@ const CallToAction = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [id]: value
     }));
+    
+    // Reset city when region changes
+    if (id === 'region') {
+      setFormData(prev => ({
+        ...prev,
+        city: ""
+      }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -75,6 +115,10 @@ const CallToAction = () => {
       setFormData({
         name: "",
         email: "",
+        company: "",
+        role: "",
+        region: "South Africa",
+        city: "",
         subject: "",
         message: "",
         source: "website"
@@ -95,13 +139,11 @@ const CallToAction = () => {
       <div className="container-custom">
         <div 
           ref={ctaRef}
-          className="glass-card max-w-4xl mx-auto rounded-2xl p-8 md:p-12 relative overflow-hidden opacity-0"
+          className="max-w-4xl mx-auto rounded-2xl p-8 md:p-12 relative overflow-hidden opacity-0"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-fixer-blue/10 to-fixer-gold/10 z-[-1]"></div>
-          
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your Business?
+              CONNECT WITH US
             </h2>
             <p className="text-fixer-light/80 max-w-2xl mx-auto">
               Let's start a conversation about how our consulting services can help you achieve your business goals and drive sustainable growth.
@@ -112,13 +154,13 @@ const CallToAction = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                  Name
+                  Name <span className="text-purple-custom">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   placeholder="Your name"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
                   required
                   value={formData.name}
                   onChange={handleChange}
@@ -127,13 +169,13 @@ const CallToAction = () => {
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                  Email
+                  Email <span className="text-purple-custom">*</span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
                   required
                   value={formData.email}
                   onChange={handleChange}
@@ -141,15 +183,85 @@ const CallToAction = () => {
               </div>
             </div>
             
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  Company <span className="text-purple-custom">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  placeholder="Company name"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
+                  required
+                  value={formData.company}
+                  onChange={handleChange}
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="role" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  Your Role <span className="text-purple-custom">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="role"
+                  placeholder="Your job title"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
+                  required
+                  value={formData.role}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="region" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  Region <span className="text-purple-custom">*</span>
+                </label>
+                <select
+                  id="region"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white"
+                  required
+                  value={formData.region}
+                  onChange={handleChange}
+                >
+                  {regions.map(region => (
+                    <option key={region} value={region}>{region}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div>
+                <label htmlFor="city" className="block text-sm font-medium mb-1 text-fixer-light/90">
+                  City <span className="text-purple-custom">*</span>
+                </label>
+                <select
+                  id="city"
+                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white"
+                  required
+                  value={formData.city}
+                  onChange={handleChange}
+                >
+                  <option value="" disabled>Select a city</option>
+                  {formData.region && cities[formData.region as keyof typeof cities].map(city => (
+                    <option key={city} value={city}>{city}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+            
             <div>
               <label htmlFor="subject" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                Subject
+                Subject <span className="text-purple-custom">*</span>
               </label>
               <input
                 type="text"
                 id="subject"
                 placeholder="How can we help?"
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
+                required
                 value={formData.subject}
                 onChange={handleChange}
               />
@@ -157,13 +269,13 @@ const CallToAction = () => {
             
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                Message
+                Message <span className="text-purple-custom">*</span>
               </label>
               <textarea
                 id="message"
                 rows={5}
                 placeholder="Tell us about your project..."
-                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-fixer-blue text-white placeholder:text-white/40 resize-none"
+                className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40 resize-none"
                 required
                 value={formData.message}
                 onChange={handleChange}
@@ -187,7 +299,7 @@ const CallToAction = () => {
                     </span>
                   </>
                 ) : (
-                  'Contact Us'
+                  'Get in Touch'
                 )}
               </button>
             </div>
@@ -195,8 +307,8 @@ const CallToAction = () => {
         </div>
       </div>
       
-      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-fixer-blue/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-fixer-gold/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-custom/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-custom/10 rounded-full blur-3xl"></div>
     </section>
   );
 };

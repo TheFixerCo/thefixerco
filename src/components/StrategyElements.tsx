@@ -1,16 +1,31 @@
 
 import React from 'react';
 
-const StrategyElement = ({ title, description }: { title: string; description: string }) => (
-  <div className="flex flex-col gap-4 glass-card p-6 rounded-lg">
-    <div className="flex items-center gap-4">
-      <span className="bg-white text-fixer-dark px-4 py-2 rounded-full font-mokoto text-sm">
-        {title}
-      </span>
+const StrategyElement = ({ title, description }: { title: string; description: string }) => {
+  // Function to bold specific keywords in description
+  const boldKeywords = (text: string) => {
+    return text.split(' ').map((word, index) => {
+      // Bold words like "unified", "data-driven", "personalized", "targeted", etc.
+      const keyWords = ["unified", "data-driven", "personalized", "targeted", "engagement", "conversion", "unique", "engaging", "social proof"];
+      
+      if (keyWords.some(keyword => word.toLowerCase().includes(keyword.toLowerCase()))) {
+        return <strong key={index}>{word} </strong>;
+      }
+      return word + " ";
+    });
+  };
+
+  return (
+    <div className="flex flex-col gap-4 glass-card p-6 rounded-lg">
+      <div className="flex items-center justify-center">
+        <span className="bg-white text-fixer-dark px-6 py-3 rounded-full font-mokoto text-base font-bold">
+          {title}
+        </span>
+      </div>
+      <p className="font-poppins text-black">{boldKeywords(description)}</p>
     </div>
-    <p className="font-poppins text-black">{description}</p>
-  </div>
-);
+  );
+};
 
 const StrategyElements = () => {
   return (

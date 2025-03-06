@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 
@@ -13,37 +12,12 @@ const CallToAction = () => {
     city: "",
     subject: "",
     message: "",
+    newsletter: false,
     source: "website"
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // Dropdown options
-  const regions = [
-    "South Africa",
-    "East Africa",
-    "West Africa",
-    "USA",
-    "Asia",
-    "Europe",
-    "Australia",
-    "Middle East",
-    "Canada",
-    "Other"
-  ];
-  
-  const cities = {
-    "South Africa": ["Johannesburg", "Cape Town", "Durban", "Pretoria", "Port Elizabeth", "Bloemfontein", "Other"],
-    "East Africa": ["Nairobi", "Dar es Salaam", "Kampala", "Kigali", "Addis Ababa", "Other"],
-    "West Africa": ["Lagos", "Accra", "Abuja", "Dakar", "Other"],
-    "USA": ["New York", "Los Angeles", "Chicago", "San Francisco", "Miami", "Other"],
-    "Asia": ["Tokyo", "Singapore", "Hong Kong", "Mumbai", "Shanghai", "Other"],
-    "Europe": ["London", "Paris", "Berlin", "Madrid", "Rome", "Other"],
-    "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Other"],
-    "Middle East": ["Dubai", "Riyadh", "Doha", "Abu Dhabi", "Other"],
-    "Canada": ["Toronto", "Vancouver", "Montreal", "Calgary", "Other"],
-    "Other": ["Other"]
-  };
+  const [showThankYou, setShowThankYou] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,10 +41,10 @@ const CallToAction = () => {
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { id, value } = e.target;
+    const { id, type, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [id]: value
+      [id]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
     
     // Reset city when region changes
@@ -101,15 +75,15 @@ const CallToAction = () => {
       page: window.location.pathname
     };
     
-    // Log lead data to console (in a real app, you would send this to your backend)
-    console.log("Lead captured:", leadData);
-    
     // Simulate API call with timeout
     setTimeout(() => {
-      // Store lead in localStorage as a simple database
+      // Store lead in localStorage
       const leads = JSON.parse(localStorage.getItem('leads') || '[]');
       leads.push(leadData);
       localStorage.setItem('leads', JSON.stringify(leads));
+      
+      setShowThankYou(true);
+      setIsSubmitting(false);
       
       // Reset form
       setFormData({
@@ -121,14 +95,12 @@ const CallToAction = () => {
         city: "",
         subject: "",
         message: "",
+        newsletter: false,
         source: "website"
       });
       
-      setIsSubmitting(false);
-      
-      // Show success message
-      toast.success("Thank you for your message!", {
-        description: "We'll get back to you soon.",
+      toast.success("Thanks for contacting us!", {
+        description: "We will get back to you within 24-48 hours.",
         duration: 5000
       });
     }, 1000);
@@ -142,10 +114,10 @@ const CallToAction = () => {
           className="max-w-4xl mx-auto rounded-2xl p-8 md:p-12 relative overflow-hidden opacity-0"
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mokoto text-purple-custom">
               CONNECT WITH US
             </h2>
-            <p className="text-fixer-light/80 max-w-2xl mx-auto">
+            <p className="text-fixer-light/80 max-w-2xl mx-auto font-poppins">
               Let's start a conversation about how our consulting services can help you achieve your business goals and drive sustainable growth.
             </p>
           </div>
@@ -186,12 +158,12 @@ const CallToAction = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="company" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                  Company <span className="text-purple-custom">*</span>
+                  Company Name <span className="text-purple-custom">*</span>
                 </label>
                 <input
                   type="text"
                   id="company"
-                  placeholder="Company name"
+                  placeholder="Your company name"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40"
                   required
                   value={formData.company}
@@ -212,43 +184,6 @@ const CallToAction = () => {
                   value={formData.role}
                   onChange={handleChange}
                 />
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="region" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                  Region <span className="text-purple-custom">*</span>
-                </label>
-                <select
-                  id="region"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white"
-                  required
-                  value={formData.region}
-                  onChange={handleChange}
-                >
-                  {regions.map(region => (
-                    <option key={region} value={region}>{region}</option>
-                  ))}
-                </select>
-              </div>
-              
-              <div>
-                <label htmlFor="city" className="block text-sm font-medium mb-1 text-fixer-light/90">
-                  City <span className="text-purple-custom">*</span>
-                </label>
-                <select
-                  id="city"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white"
-                  required
-                  value={formData.city}
-                  onChange={handleChange}
-                >
-                  <option value="" disabled>Select a city</option>
-                  {formData.region && cities[formData.region as keyof typeof cities].map(city => (
-                    <option key={city} value={city}>{city}</option>
-                  ))}
-                </select>
               </div>
             </div>
             
@@ -277,20 +212,35 @@ const CallToAction = () => {
                 placeholder="Tell us about your project..."
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-custom text-white placeholder:text-white/40 resize-none"
                 required
+                maxLength={5000}
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
+              <p className="text-xs text-fixer-light/60 mt-1">Maximum 5000 characters</p>
+            </div>
+            
+            <div className="flex items-start gap-2">
+              <input
+                type="checkbox"
+                id="newsletter"
+                className="mt-1"
+                checked={formData.newsletter}
+                onChange={handleChange}
+              />
+              <label htmlFor="newsletter" className="text-sm text-fixer-light/90">
+                Would you like to receive email updates from TheFixerCo? <span className="text-purple-custom">*</span>
+              </label>
             </div>
             
             <div className="text-center">
               <button 
                 type="submit" 
-                className="button-primary px-8 py-4 text-lg relative"
+                className="bg-purple-custom hover:bg-purple-custom/90 text-white font-mokoto font-bold px-8 py-4 rounded-md transition-all duration-300"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
                   <>
-                    <span className="opacity-0">Contact Us</span>
+                    <span className="opacity-0">Submit</span>
                     <span className="absolute inset-0 flex items-center justify-center">
                       <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -299,7 +249,7 @@ const CallToAction = () => {
                     </span>
                   </>
                 ) : (
-                  'Get in Touch'
+                  'Submit'
                 )}
               </button>
             </div>

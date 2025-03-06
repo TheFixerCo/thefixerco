@@ -8,14 +8,14 @@ const StrategyElement = ({ title, description }: { title: string; description: s
         {title}
       </span>
     </div>
-    <p className="font-poppins text-fixer-light/80">{description}</p>
+    <p className="font-poppins text-black">{description}</p>
   </div>
 );
 
 const StrategyElements = () => {
   return (
     <div className="space-y-8">
-      <h2 className="text-3xl md:text-4xl font-mokoto text-center mb-12 text-fixer-gold">
+      <h2 className="text-3xl md:text-4xl font-mokoto text-center mb-12 text-purple-custom">
         Our strategy is rooted in 3 essential elements
       </h2>
       <div className="grid md:grid-cols-3 gap-6">

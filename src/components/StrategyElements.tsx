@@ -22,19 +22,19 @@ const StrategyElement = ({ title, description }: { title: string; description: s
   return (
     <div className="flex flex-col gap-4 glass-card p-6 rounded-lg">
       <div className="flex items-center justify-center">
-        <span className="bg-white text-fixer-dark px-6 py-3 rounded-full font-tenor text-[20px] font-bold">
+        <span className="bg-white dark:bg-fixer-dark text-fixer-dark dark:text-white px-6 py-3 rounded-full font-mokoto text-[28px] font-bold transition-colors hover:text-purple-accent">
           {title}
         </span>
       </div>
-      <p className="font-poppins text-black">{boldKeywords(description)}</p>
+      <p className="font-poppins text-black dark:text-white">{boldKeywords(description)}</p>
     </div>
   );
 };
 
 const StrategyElements = () => {
   return (
-    <div className="space-y-8">
-      <h2 className="text-3xl md:text-4xl font-tenor font-bold text-center mb-12">
+    <div className="space-y-8 mt-16">
+      <h2 className="text-3xl md:text-4xl font-open-sans font-bold text-center mb-12 text-black dark:text-white">
         Our <span className="text-purple-custom">strategy</span> is rooted in <span className="text-purple-custom">3 pillars</span>
       </h2>
       <div className="grid md:grid-cols-3 gap-6">

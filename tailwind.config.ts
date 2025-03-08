@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -21,10 +20,11 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Poppins', 'Helvetica', 'Arial', 'sans-serif'],
-				heading: ['Tenor Sans', 'Helvetica', 'Arial', 'sans-serif'],
+				heading: ['Open Sans', 'Helvetica', 'Arial', 'sans-serif'],
 				mokoto: ['Mokoto', 'sans-serif'],
-				tenor: ['Tenor Sans', 'sans-serif'],
+				tenor: ['Open Sans', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
+				'open-sans': ['Open Sans', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -82,7 +82,8 @@ export default {
 				},
 				purple: {
 					500: '#A855F7',
-					custom: '#a778b8'
+					custom: '#a778b8',
+					accent: '#C04277'
 				}
 			},
 			borderRadius: {

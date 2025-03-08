@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Header = () => {
@@ -65,36 +65,22 @@ const Header = () => {
       }`}
     >
       <div className="container-custom flex justify-between items-center">
-        <a href="#home" className="z-10 flex items-center">
-          <img 
-            src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
-            alt="The Fixer Co" 
-            className="h-8 w-8 mr-3" 
-          />
-          <span className="text-white font-medium text-xl">The Fixer Co.</span>
-        </a>
-        
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8 items-center">
           <Button 
             asChild
-            className="bg-purple-custom hover:bg-fixer-blue font-tenor text-[20px] font-bold text-white transition-all duration-300"
+            className="bg-purple-custom hover:bg-purple-accent font-open-sans text-[20px] font-bold text-white transition-all duration-300 animate-pulse"
           >
             <a 
-              href="#contact" 
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick("contact");
-              }}
+              href="mailto:bianca@thefixerco.com" 
               className="flex items-center gap-2"
             >
-              <Phone size={18} className="text-white" />
+              <Mail size={18} className="text-white" />
               GET IN TOUCH
             </a>
           </Button>
           <a 
             href="#home" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "home" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
@@ -104,7 +90,7 @@ const Header = () => {
           </a>
           <a 
             href="#services" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "services" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
@@ -114,7 +100,7 @@ const Header = () => {
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
@@ -123,6 +109,15 @@ const Header = () => {
             CASE STUDIES
           </a>
         </nav>
+
+        <a href="#home" className="z-10 flex items-center">
+          <img 
+            src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
+            alt="The Fixer Co" 
+            className="h-8 w-8 mr-3" 
+          />
+          <span className="text-white font-medium text-xl">The Fixer Co.</span>
+        </a>
         
         {/* Mobile menu button */}
         <button 
@@ -141,23 +136,19 @@ const Header = () => {
         >
           <Button 
             asChild
-            className="bg-purple-custom hover:bg-fixer-blue font-tenor font-bold text-[20px] text-white transition-all duration-300"
+            className="bg-purple-custom hover:bg-purple-accent font-open-sans font-bold text-[20px] text-white transition-all duration-300"
           >
             <a 
-              href="#contact" 
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick("contact");
-              }}
+              href="mailto:bianca@thefixerco.com" 
               className="flex items-center gap-2"
             >
-              <Phone size={18} className="text-white" />
+              <Mail size={18} className="text-white" />
               GET IN TOUCH
             </a>
           </Button>
           <a 
             href="#home" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "home" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
@@ -167,7 +158,7 @@ const Header = () => {
           </a>
           <a 
             href="#services" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "services" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
@@ -177,7 +168,7 @@ const Header = () => {
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link font-tenor font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""}`}
+            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
@@ -187,6 +178,7 @@ const Header = () => {
           </a>
         </div>
       </div>
+      <div className="h-1 w-full bg-gradient-to-r from-purple-custom via-purple-accent to-purple-custom"></div>
     </header>
   );
 };

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -84,7 +85,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-tenor font-bold tracking-tight text-purple-custom;
+    @apply font-open-sans font-bold tracking-tight text-purple-custom;
   }
 
   h1 {
@@ -101,6 +102,14 @@
 
   section {
     @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .dark .text-black {
+    @apply text-white;
+  }
+  
+  .dark .glass-card {
+    @apply bg-white/10;
   }
 }
 

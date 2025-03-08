@@ -3,62 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageSquareText, Sparkles, Share2, Send, BarChart3, Users, Calendar } from "lucide-react";
-
-// Feature Card Component
-const FeatureCard = ({ 
-  icon, 
-  title, 
-  description, 
-  href 
-}: { 
-  icon: React.ReactNode; 
-  title: string; 
-  description: string; 
-  href: string; 
-}) => {
-  return (
-    <div className="glass-card rounded-lg p-6 flex flex-col items-center text-center transition-all duration-300 hover:transform hover:scale-[1.03]">
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-xl font-open-sans font-bold mb-2 text-black dark:text-white">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 font-poppins mb-4">{description}</p>
-      <Button variant="link" asChild className="text-purple-custom hover:text-purple-accent">
-        <Link to={href}>Learn more</Link>
-      </Button>
-    </div>
-  );
-};
-
-// DashboardHeader Component
-const DashboardHeader = () => {
-  return (
-    <header className="w-full py-4 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-fixer-dark">
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <h2 className="text-xl font-open-sans font-bold text-purple-custom">The Fixer Connect</h2>
-          <nav className="hidden md:flex items-center gap-4">
-            <Link to="/dashboard" className="nav-link active">Dashboard</Link>
-            <Link to="/content" className="nav-link">Content</Link>
-            <Link to="/analytics" className="nav-link">Analytics</Link>
-            <Link to="/clients" className="nav-link">Clients</Link>
-          </nav>
-        </div>
-        <div className="flex items-center gap-3">
-          <Button variant="outline" size="sm">Need Help?</Button>
-          <Button variant="default" size="sm">Account</Button>
-        </div>
-      </div>
-    </header>
-  );
-};
-
-// DashboardShell Component
-const DashboardShell = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className="min-h-screen bg-gray-50 dark:bg-fixer-dark">
-      {children}
-    </div>
-  );
-};
+import { DashboardHeader } from "@/components/DashboardHeader";
+import { DashboardShell } from "@/components/DashboardShell";
+import { FeatureCard } from "@/components/FeatureCard";
 
 const Dashboard = () => {
   return (

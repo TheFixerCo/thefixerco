@@ -33,13 +33,13 @@ const HowWeWorkSection = () => {
           {/* Social-first opportunity section */}
           <div className="animate-on-scroll opacity-0 transition-all duration-700 mb-24 text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">
-              How we help <span className="text-purple-500">local businesses succeed with organic social media strategy without ads:</span>
+              HOW WE <span className="text-purple-500">HELP</span> LOCAL BUSINESSES <span className="text-purple-500">SUCCEED</span> WITH ORGANIC SOCIAL MEDIA STRATEGY WITHOUT ADS:
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="text-center flex flex-col items-center">
-                <p className="text-3xl font-bold text-white mb-2">more</p>
-                <p className="text-3xl font-bold text-purple-500 mb-6">relevant</p>
+                <p className="text-3xl font-bold text-white mb-2">MORE</p>
+                <p className="text-3xl font-bold text-purple-500 mb-6">RELEVANT</p>
                 <div className="w-24 h-24 rounded-full border-2 border-white flex items-center justify-center">
                   <p className="text-xl">to</p>
                 </div>
@@ -47,14 +47,14 @@ const HowWeWorkSection = () => {
               </div>
               
               <div className="text-center flex flex-col items-center">
-                <p className="text-3xl font-bold text-white mb-2">more</p>
-                <p className="text-3xl font-bold text-purple-500 mb-6">consumer segments</p>
+                <p className="text-3xl font-bold text-white mb-2">MORE</p>
+                <p className="text-3xl font-bold text-purple-500 mb-6">CONSUMER SEGMENTS</p>
                 <p className="mt-6 text-white">gather customer insights</p>
               </div>
               
               <div className="text-center flex flex-col items-center">
-                <p className="text-3xl font-bold text-white mb-2">more</p>
-                <p className="text-3xl font-bold text-purple-500 mb-6">often</p>
+                <p className="text-3xl font-bold text-white mb-2">MORE</p>
+                <p className="text-3xl font-bold text-purple-500 mb-6">OFTEN</p>
                 <div className="w-24 h-24 rounded-full border-2 border-white flex items-center justify-center">
                   <p className="text-lg text-center">showing<br />up</p>
                 </div>
@@ -64,10 +64,6 @@ const HowWeWorkSection = () => {
           </div>
         </div>
       </div>
-      
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-0 w-72 h-72 bg-fixer-gold/5 rounded-full blur-3xl"></div>
     </section>
   );
 };

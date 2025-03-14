@@ -1,0 +1,67 @@
+
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-2xl bg-black/40 border border-white/10;
+  }
+  
+  .highlight-text {
+    @apply text-fixer-blue font-semibold;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+  
+  .button-primary {
+    @apply px-6 py-3 bg-purple-custom text-white font-tenor font-bold rounded-md 
+           hover:bg-purple-custom/90 transition-all duration-300 transform hover:scale-[1.02]
+           focus:outline-none focus:ring-2 focus:ring-purple-custom focus:ring-opacity-50;
+  }
+  
+  .button-secondary {
+    @apply px-6 py-3 bg-transparent border border-purple-custom text-purple-custom font-tenor font-bold 
+           rounded-md hover:bg-purple-custom hover:text-white transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-purple-custom focus:ring-opacity-50;
+  }
+  
+  .nav-link {
+    @apply relative px-3 py-2 text-fixer-light/90 hover:text-white transition-colors
+           after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 
+           after:bottom-0 after:left-0 after:bg-fixer-blue after:origin-bottom-right 
+           after:transition-transform after:duration-300 hover:after:scale-x-100 
+           after:origin-bottom-left;
+  }
+  
+  .nav-link.active {
+    @apply text-white after:scale-x-100 after:bg-purple-custom;
+  }
+
+  .section-heading {
+    @apply text-center mb-16;
+  }
+
+  .section-title {
+    @apply text-[20px] md:text-4xl lg:text-5xl font-tenor font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-black font-poppins max-w-3xl mx-auto;
+  }
+
+  .service-card {
+    @apply glass-card p-8 rounded-lg flex flex-col items-center text-center 
+           transition-all duration-300 hover:transform hover:scale-[1.03] hover:shadow-xl;
+  }
+
+  .case-study {
+    @apply flex flex-col lg:flex-row glass-card overflow-hidden rounded-lg;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

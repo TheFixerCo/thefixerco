@@ -25,6 +25,7 @@ export default {
 				tenor: ['Open Sans', 'sans-serif'],
 				poppins: ['Poppins', 'sans-serif'],
 				'open-sans': ['Open Sans', 'sans-serif'],
+				neopixel: ['Neopixel', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

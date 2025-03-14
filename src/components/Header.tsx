@@ -68,7 +68,7 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8 items-center">
           <Button 
             asChild
-            className="bg-purple-custom hover:bg-purple-accent font-open-sans text-[20px] font-bold text-white transition-all duration-300 animate-pulse"
+            className="bg-purple-custom hover:bg-purple-accent font-neopixel text-[20px] font-bold text-white transition-all duration-300 animate-pulse"
           >
             <a 
               href="mailto:bianca@thefixerco.com" 
@@ -116,7 +116,7 @@ const Header = () => {
             alt="The Fixer Co" 
             className="h-8 w-8 mr-3" 
           />
-          <span className="text-white font-medium text-xl">The Fixer Co.</span>
+          <span className="text-white font-neopixel font-medium text-xl">The Fixer Co.</span>
         </a>
         
         {/* Mobile menu button */}
@@ -136,7 +136,7 @@ const Header = () => {
         >
           <Button 
             asChild
-            className="bg-purple-custom hover:bg-purple-accent font-open-sans font-bold text-[20px] text-white transition-all duration-300"
+            className="bg-purple-custom hover:bg-purple-accent font-neopixel font-bold text-[20px] text-white transition-all duration-300"
           >
             <a 
               href="mailto:bianca@thefixerco.com" 

@@ -44,19 +44,11 @@ const CaseStudiesSection = () => {
   }, []);
 
   return (
-    <section id="case-studies" className="bg-fixer-dark py-24 relative">
-      <div className="absolute inset-0 opacity-10 backdrop-blur-xl">
-        <img 
-          src="/lovable-uploads/e8a07933-d5f1-4934-a390-156601eb7558.png" 
-          alt="Background Blur"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
-      <div className="container-custom relative z-10">
+    <section id="case-studies" className="bg-fixer-dark py-24">      
+      <div className="container-custom">
         <div className="section-heading">
           <h2 className="section-title text-[20px] md:text-4xl lg:text-5xl font-open-sans font-bold mb-4">
-            Case <span className="text-purple-custom">Studies</span>
+            CASE <span>studies</span>
           </h2>
           <p className="section-subtitle text-white">
             Real results for real clients. Explore how our strategic consulting has transformed businesses across industries.
@@ -70,11 +62,11 @@ const CaseStudiesSection = () => {
               ref={(el) => (sectionsRef.current[index] = el)}
               className="opacity-0 transition-all duration-700 flex flex-col"
             >
-              <div className="bg-white/5 backdrop-blur-md border border-purple-custom/30 rounded-lg p-6 h-64 flex items-center justify-center">
+              <div className="glass-card p-6 rounded-lg h-64 flex items-center justify-center">
                 <h3 className="text-center font-open-sans font-bold text-white text-xl">{study.title}</h3>
               </div>
               
-              <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-lg p-4 flex items-center justify-between">
+              <div className="mt-4 bg-black/40 rounded-lg p-4 flex items-center justify-between">
                 <div>
                   <span className="text-purple-custom font-open-sans font-bold">{study.category}</span>
                 </div>

@@ -10,10 +10,10 @@ const Hero = () => {
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-24">
           <h1 className="font-neopixel text-4xl md:text-6xl lg:text-7xl mb-6 text-balance text-purple-custom mt-16">
-            UNLOCK REAL <span className="lowercase">online growth</span>
+            UNLOCK REAL <span>online growth</span>
           </h1>
           <p className="font-poppins text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto">
-            Our data-driven approach to social selling and content strategy helps startups and founders like you achieve significant online growth, drive more sales, and increase revenue. In just 90 days, you could transform your online presence and start seeing real results.
+            Our data-driven approach to social selling and content strategy helps startups and founders like you achieve significant online growth, drive more sales, and increase revenue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-purple-custom hover:bg-purple-accent font-neopixel text-[20px]">

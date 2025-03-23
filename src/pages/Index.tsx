@@ -93,7 +93,7 @@ const Index = () => {
       <button
         id="scroll-to-top"
         onClick={handleScrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-fixer-gold/80 hover:bg-fixer-gold rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 z-40"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-purple-custom/80 hover:bg-purple-custom rounded-full flex items-center justify-center text-white shadow-lg opacity-0 invisible transition-all duration-300 z-40"
         aria-label="Scroll to top"
       >
         <svg 

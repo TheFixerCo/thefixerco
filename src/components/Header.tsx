@@ -75,38 +75,38 @@ const Header = () => {
               className="flex items-center gap-2"
             >
               <Mail size={18} className="text-white" />
-              GET IN TOUCH
+              Get in touch
             </a>
           </Button>
           <a 
             href="#home" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
             }}
           >
-            HOME
+            Home
           </a>
           <a 
             href="#services" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
             }}
           >
-            SERVICES
+            Services
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
             }}
           >
-            CASE STUDIES
+            Case Studies
           </a>
         </nav>
 
@@ -143,38 +143,38 @@ const Header = () => {
               className="flex items-center gap-2"
             >
               <Mail size={18} className="text-white" />
-              GET IN TOUCH
+              Get in touch
             </a>
           </Button>
           <a 
             href="#home" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "home" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("home");
             }}
           >
-            HOME
+            Home
           </a>
           <a 
             href="#services" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "services" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("services");
             }}
           >
-            SERVICES
+            Services
           </a>
           <a 
             href="#case-studies" 
-            className={`nav-link font-open-sans font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
+            className={`nav-link font-poppins font-bold text-[20px] ${activeLink === "case-studies" ? "active" : ""} hover:text-purple-accent`}
             onClick={(e) => {
               e.preventDefault();
               handleNavLinkClick("case-studies");
             }}
           >
-            CASE STUDIES
+            Case Studies
           </a>
         </div>
       </div>

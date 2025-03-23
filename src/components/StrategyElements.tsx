@@ -17,7 +17,7 @@ const StrategyElement = ({ title, description }: { title: string; description: s
 const StrategyElements = () => {
   return (
     <div className="space-y-8 mt-16">
-      <h2 className="text-3xl md:text-4xl font-open-sans font-bold text-center mb-12 text-white">
+      <h2 className="text-3xl md:text-4xl font-poppins font-bold text-center mb-12 text-white">
         OUR <span>strategy</span> IS ROOTED IN <span>3 pillars</span>
       </h2>
       <div className="grid md:grid-cols-3 gap-6">

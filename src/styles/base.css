@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-fixer-dark text-white font-sans antialiased;
+    @apply bg-fixer-dark text-white font-poppins antialiased;
     overflow-x: hidden;
   }
 
@@ -82,7 +82,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-open-sans font-bold tracking-tight text-purple-custom;
+    @apply font-poppins font-bold tracking-tight text-purple-custom;
     text-transform: uppercase;
   }
 

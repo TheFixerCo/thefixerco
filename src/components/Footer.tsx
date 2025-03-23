@@ -1,3 +1,4 @@
+
 import { Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -84,17 +85,19 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Contact</h4>
             <ul className="space-y-3">
               <li className="text-fixer-light/70">
-                123 Business Avenue<br />
-                New York, NY 10001
+                Forbes Road<br />
+                Johannesburg<br />
+                South Africa<br />
+                2194
               </li>
               <li>
-                <a href="mailto:info@thefixerco.com" className="text-fixer-light/70 hover:text-white transition-colors">
-                  info@thefixerco.com
+                <a href="mailto:bianca@thefixerco.com" className="text-fixer-light/70 hover:text-white transition-colors">
+                  bianca@thefixerco.com
                 </a>
               </li>
               <li>
-                <a href="tel:+12125551234" className="text-fixer-light/70 hover:text-white transition-colors">
-                  +1 (212) 555-1234
+                <a href="tel:+27847402418" className="text-fixer-light/70 hover:text-white transition-colors">
+                  +27 84 740 2418
                 </a>
               </li>
             </ul>

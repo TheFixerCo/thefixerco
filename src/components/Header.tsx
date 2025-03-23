@@ -75,7 +75,7 @@ const Header = () => {
               className="flex items-center gap-2"
             >
               <Mail size={18} className="text-white" />
-              Get in touch
+              Connect with me
             </a>
           </Button>
           <a 
@@ -86,7 +86,7 @@ const Header = () => {
               handleNavLinkClick("home");
             }}
           >
-            Home
+            home
           </a>
           <a 
             href="#services" 
@@ -96,7 +96,7 @@ const Header = () => {
               handleNavLinkClick("services");
             }}
           >
-            Services
+            services
           </a>
           <a 
             href="#case-studies" 
@@ -106,7 +106,7 @@ const Header = () => {
               handleNavLinkClick("case-studies");
             }}
           >
-            Case Studies
+            case studies
           </a>
         </nav>
 
@@ -143,7 +143,7 @@ const Header = () => {
               className="flex items-center gap-2"
             >
               <Mail size={18} className="text-white" />
-              Get in touch
+              Connect with me
             </a>
           </Button>
           <a 
@@ -154,7 +154,7 @@ const Header = () => {
               handleNavLinkClick("home");
             }}
           >
-            Home
+            home
           </a>
           <a 
             href="#services" 
@@ -164,7 +164,7 @@ const Header = () => {
               handleNavLinkClick("services");
             }}
           >
-            Services
+            services
           </a>
           <a 
             href="#case-studies" 
@@ -174,7 +174,7 @@ const Header = () => {
               handleNavLinkClick("case-studies");
             }}
           >
-            Case Studies
+            case studies
           </a>
         </div>
       </div>

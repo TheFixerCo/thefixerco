@@ -67,7 +67,7 @@ const ServicesSection = () => {
   return (
     <section id="services" className="bg-gradient-to-b from-fixer-dark to-fixer-dark/95 py-24 relative">
       <div className="container-custom">
-        <div className="section-heading mt-8">
+        <div className="section-heading mt-2">
           <h2 className="section-title font-tenor font-bold text-center mb-6">
             <span className="text-purple-custom">Social-First</span> Solutions 🎯<br/>
             is what we do 💜

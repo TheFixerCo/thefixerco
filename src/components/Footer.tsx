@@ -1,5 +1,5 @@
 
-import { Linkedin, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/biancasibiya/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-fixer-blue/20 text-white transition-colors"
@@ -32,33 +32,13 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://tiktok.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-fixer-blue/20 text-white transition-colors"
-                aria-label="TikTok"
-              >
-                <Twitter size={20} /> {/* Using Twitter as a placeholder for TikTok */}
-              </a>
-              <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/bianca_sibiya/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-fixer-blue/20 text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
-              </a>
-              <a 
-                href="https://substack.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-fixer-blue/20 text-white transition-colors"
-                aria-label="Substack"
-              >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 4H21V6H3V4ZM3 8H21V10H3V8ZM11 12H21V14H11V12ZM11 16H21V18H11V16ZM11 20H21V22H11V20ZM3 12H9V22H3V12Z" fill="currentColor"/>
-                </svg>
               </a>
             </div>
           </div>

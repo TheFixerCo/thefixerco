@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Menu, X, Mail } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 
 const Header = () => {
@@ -8,7 +7,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
 
-  // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -22,7 +20,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle section visibility to update active link
   useEffect(() => {
     const handleSectionVisibility = () => {
       const sections = ["home", "services", "case-studies", "contact"];
@@ -71,10 +68,12 @@ const Header = () => {
             className="bg-purple-custom hover:bg-purple-accent font-neopixel text-[20px] font-bold text-white transition-all duration-300 animate-pulse"
           >
             <a 
-              href="mailto:bianca@thefixerco.com" 
+              href="https://cal.read.ai/biancathefixer?step=duration" 
               className="flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Mail size={18} className="text-white" />
+              <Calendar size={18} className="text-white" />
               Connect with me
             </a>
           </Button>
@@ -119,7 +118,6 @@ const Header = () => {
           <span className="text-white font-neopixel font-medium text-xl">The Fixer Co.</span>
         </a>
         
-        {/* Mobile menu button */}
         <button 
           className="md:hidden z-20 text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -128,7 +126,6 @@ const Header = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         
-        {/* Mobile Navigation */}
         <div 
           className={`fixed inset-0 bg-fixer-dark/95 backdrop-blur-md flex flex-col justify-center items-center space-y-8 transform transition-transform duration-300 ease-in-out md:hidden ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -139,10 +136,12 @@ const Header = () => {
             className="bg-purple-custom hover:bg-purple-accent font-neopixel font-bold text-[20px] text-white transition-all duration-300"
           >
             <a 
-              href="mailto:bianca@thefixerco.com" 
+              href="https://cal.read.ai/biancathefixer?step=duration" 
               className="flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Mail size={18} className="text-white" />
+              <Calendar size={18} className="text-white" />
               Connect with me
             </a>
           </Button>

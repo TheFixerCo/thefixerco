@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "./ui/button";
-import { Mail, ArrowDown, Smartphone } from "lucide-react";
+import { ArrowDown, Smartphone, Calendar } from "lucide-react";
 import StrategyElements from './StrategyElements';
 
 const Hero = () => {
@@ -17,8 +17,8 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-purple-custom hover:bg-purple-accent font-neopixel text-[20px]">
-              <a href="tel:+27847402418" className="flex items-center">
-                <Smartphone className="mr-2 h-4 w-4" />
+              <a href="https://cal.read.ai/biancathefixer?step=duration" className="flex items-center" target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2 h-4 w-4" />
                 Connect with me
                 <ArrowDown 
                   className="ml-2 animate-bounce"
@@ -36,8 +36,8 @@ const Hero = () => {
             Ready to level up your automation?
           </p>
           <Button asChild variant="outline" className="border-purple-custom text-purple-custom hover:bg-purple-accent hover:text-white font-neopixel text-[20px]">
-            <a href="mailto:bianca@thefixerco.com" className="flex items-center">
-              <Mail className="mr-2 h-4 w-4" />
+            <a href="https://cal.read.ai/biancathefixer?step=duration" className="flex items-center" target="_blank" rel="noopener noreferrer">
+              <Calendar className="mr-2 h-4 w-4" />
               Connect with me
             </a>
           </Button>

@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 
@@ -95,6 +96,54 @@ export default function FixerCoLandingPage() {
             <Button variant="outline" className="mt-6 px-6 py-6 bg-black text-white hover:bg-black/80 rounded-2xl font-bold">
               Join the Waitlist
             </Button>
+          </div>
+        </section>
+
+        {/* Contact Form Section */}
+        <section className="py-20 px-6 bg-black text-white">
+          <div className="container-custom">
+            <h2 className="text-3xl font-bold mb-4">Let's Get Sh*t Fixed.</h2>
+            <p className="mb-8 max-w-2xl">Need a fixer, want to collaborate, or just curious? Drop us a note and let's connect.</p>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input type="text" placeholder="First Name*" className="p-3 rounded-lg bg-white text-black" required />
+              <Input type="text" placeholder="Last Name*" className="p-3 rounded-lg bg-white text-black" required />
+              <Input type="email" placeholder="Email Address*" className="p-3 rounded-lg bg-white text-black md:col-span-2" required />
+              <Input type="text" placeholder="Job Title" className="p-3 rounded-lg bg-white text-black" />
+              <Input type="text" placeholder="Company / Brand" className="p-3 rounded-lg bg-white text-black" />
+              <select className="p-3 rounded-lg bg-white text-black border border-input h-10" required>
+                <option value="">Select Country*</option>
+                <option value="South Africa">South Africa</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Other">Other</option>
+              </select>
+              <select className="p-3 rounded-lg bg-white text-black border border-input h-10" required>
+                <option value="">I'm reaching out as a…*</option>
+                <option>💼 Founder / Entrepreneur</option>
+                <option>🎨 Creative / Freelancer</option>
+                <option>🏢 Agency</option>
+                <option>🧑‍💻 Brand / Business</option>
+                <option>📢 Media / Press</option>
+                <option>🤝 Potential Partner</option>
+                <option>❓Just Curious</option>
+              </select>
+              <Textarea placeholder="How can we help you?*" className="p-3 rounded-lg bg-white text-black md:col-span-2" required />
+              <div className="md:col-span-2">
+                <label className="inline-flex items-center">
+                  <input type="checkbox" className="mr-2" />
+                  I want to list my services as a Fixer
+                </label>
+                <br />
+                <label className="inline-flex items-center">
+                  <input type="checkbox" className="mr-2" />
+                  I want early access to Phase 2
+                </label>
+              </div>
+              <Button type="submit" className="mt-4 bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-2xl font-bold md:col-span-2">
+                Send Request
+              </Button>
+            </form>
           </div>
         </section>
 

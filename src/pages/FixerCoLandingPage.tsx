@@ -2,7 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Linkedin, Tiktok } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 
 export default function FixerCoLandingPage() {
@@ -113,7 +113,12 @@ export default function FixerCoLandingPage() {
               <a href="#" className="text-purple-custom hover:text-purple-accent"><Linkedin size={24} /></a>
               <a href="#" className="text-purple-custom hover:text-purple-accent"><Facebook size={24} /></a>
               <a href="#" className="text-purple-custom hover:text-purple-accent"><Instagram size={24} /></a>
-              <a href="#" className="text-purple-custom hover:text-purple-accent"><Tiktok size={24} /></a>
+              <a href="#" className="text-purple-custom hover:text-purple-accent">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0 -6 0"></path>
+                  <path d="M12 19c-4.3 0 -7.75 -2.6 -9 -6c1.25 -3.4 4.7 -6 9 -6s7.75 2.6 9 6c-1.25 3.4 -4.7 6 -9 6Z"></path>
+                </svg>
+              </a>
             </div>
           </div>
         </section>

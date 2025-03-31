@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -107,6 +109,12 @@ const Header = () => {
           >
             case studies
           </a>
+          <Link 
+            to="/new-landing" 
+            className="nav-link font-poppins font-bold text-[20px] hover:text-purple-accent"
+          >
+            new page
+          </Link>
         </nav>
 
         <a href="#home" className="z-10 flex items-center">
@@ -175,6 +183,13 @@ const Header = () => {
           >
             case studies
           </a>
+          <Link 
+            to="/new-landing" 
+            className="nav-link font-poppins font-bold text-[20px] hover:text-purple-accent"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            new page
+          </Link>
         </div>
       </div>
       <div className="h-1 w-full bg-gradient-to-r from-purple-custom via-purple-accent to-purple-custom"></div>

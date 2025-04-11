@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Sparkles } from "lucide-react";
 
 interface FixerLogoProps {
   size?: number;
@@ -14,12 +13,10 @@ const FixerLogo = ({ size = 40, className = "" }: FixerLogoProps) => {
       style={{ width: size, height: size }}
       aria-label="The Fixer Co Favicon – fast, bold, reliable"
     >
-      <div className="absolute inset-0 bg-blue-500 rounded-lg flex items-center justify-center">
-        <span className="text-white font-bold" style={{ fontSize: size * 0.6 }}>F</span>
-      </div>
-      <Sparkles 
-        className="absolute -top-2 -right-2 text-yellow-400" 
-        size={size * 0.4}
+      <img 
+        src="/lovable-uploads/8505d01f-5506-497c-bb06-5e81085e9a9f.png" 
+        alt="The Fixer Co" 
+        className="w-full h-full"
       />
     </div>
   );

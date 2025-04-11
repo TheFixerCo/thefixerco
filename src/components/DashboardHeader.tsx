@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,11 @@ export const DashboardHeader = () => {
               <div className="flex h-full flex-col justify-between">
                 <div className="px-2 py-6">
                   <Link to="/" className="flex items-center gap-2 font-bold" onClick={() => setIsOpen(false)}>
-                    <MessageSquareText className="h-6 w-6" />
+                    <img 
+                      src="/lovable-uploads/8505d01f-5506-497c-bb06-5e81085e9a9f.png" 
+                      alt="The Fixer Co" 
+                      className="h-6 w-6" 
+                    />
                     <span>The Fixer Connect</span>
                   </Link>
                   <nav className="mt-6 flex flex-col gap-4">
@@ -82,7 +85,11 @@ export const DashboardHeader = () => {
             </SheetContent>
           </Sheet>
           <Link to="/" className="hidden items-center gap-2 font-bold md:flex">
-            <MessageSquareText className="h-6 w-6" />
+            <img 
+              src="/lovable-uploads/8505d01f-5506-497c-bb06-5e81085e9a9f.png" 
+              alt="The Fixer Co" 
+              className="h-6 w-6" 
+            />
             <span>The Fixer Connect</span>
           </Link>
         </div>

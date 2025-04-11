@@ -1,4 +1,3 @@
-
 import { Linkedin, Instagram } from "lucide-react";
 
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <img 
-                src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
+                src="/lovable-uploads/8505d01f-5506-497c-bb06-5e81085e9a9f.png" 
                 alt="The Fixer Co" 
                 className="h-8 w-8 mr-3" 
               />

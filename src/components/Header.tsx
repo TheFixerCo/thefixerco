@@ -119,7 +119,7 @@ const Header = () => {
 
         <a href="#home" className="z-10 flex items-center">
           <img 
-            src="/lovable-uploads/b361399a-6af3-4332-8b41-7903efdc4b9b.png" 
+            src="/lovable-uploads/8505d01f-5506-497c-bb06-5e81085e9a9f.png" 
             alt="The Fixer Co" 
             className="h-8 w-8 mr-3" 
           />
